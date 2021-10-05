@@ -47,3 +47,8 @@ button {
     color:transparent;
     background-clip: text;
 }
+
+.slider {
+    display:flex;
+    gap: 5px;
+}

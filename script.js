@@ -11,12 +11,7 @@ function makeDiv(divNum) {
     newDiv.style.backgroundColor = 'rgb(173, 173, 172)';
     sketchPad.appendChild(newDiv);
     newDiv.addEventListener('mouseover', function() {colorBox(divNum); })
-    console.log()
-}
-
-for (i=0; i<256; i++) {
-    makeDiv(i);
-}
+};
 
 function colorBox(divId) {
     document.getElementById(divId).style.backgroundColor = currentColor;
@@ -26,7 +21,8 @@ document.getElementById('color-button').addEventListener('click', nextColor);
 document.getElementById('clear-button').addEventListener('click', clearColor);
 document.getElementById('eraser-button').addEventListener('click', eraser);
 document.getElementById('rainbow-button').addEventListener('click', rainbow);
-
+document.getElementById('gridNum').addEventListener('mousemove', function(){updateNum(document.getElementById('gridNum').value)});
+document.getElementById('gridNum').addEventListener('change', function(){makeGrid(document.getElementById('gridNum').value)});
 
 
 function changeColor() {
@@ -66,4 +62,28 @@ function eraser() {
     currentColor = 'rgb(173, 173, 172)';
 }
 
+function clearOldGrid () {
+    const parent = document.getElementById('sketchpad');
+    while (parent.firstChild) {
+        parent.removeChild(parent.firstChild);
+    }
+}
 
+function makeGrid (gridNum) {
+    clearOldGrid();
+    clearColor();
+    
+    let grid = gridNum*gridNum;
+    document.getElementById('sketchpad').style.gridTemplateColumns = `repeat(${gridNum}, 1fr)`;
+    document.getElementById('sketchpad').style.gridTemplateRows = `repeat(${gridNum}, 1fr)`;
+    for (i=0; i<grid; i++) {
+        makeDiv(i);
+    }
+}
+
+function updateNum(gridNum) {
+    document.getElementById('numPerSide').textContent = gridNum;
+}
+
+makeGrid(16);
+updateNum(16);
