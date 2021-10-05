@@ -1,0 +1,49 @@
+body {
+    background-color: rgb(240, 234, 213);
+}
+
+#sketchpad {
+    width: 500px;
+    height: 500px;
+    display: grid;
+    grid-template-columns: repeat(16, 1fr);
+    grid-template-rows: repeat(16, 1fr);
+    padding: 100px;
+    background-color: #cc3333;
+    border-radius: 5%;
+    box-shadow: #800000 3px 8px;
+}
+h1 {
+    text-align: center;
+    font-family: 'Kalam', cursive;
+    font-size: 75px;
+    margin-bottom: 10px;
+    color: rgb(250, 233, 2);
+    text-shadow: 2px 2px 4px #000
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    padding-right: 115px;
+}
+
+.button-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin-right: 50px;
+    
+}
+
+button {
+    font-size: 25px;
+    padding: 10px 30px;
+    box-shadow: 2px 5px;
+}
+
+.rainbow-text {
+    background: linear-gradient(to right, red, orange , yellow, green, cyan, blue, violet);
+    color:transparent;
+    background-clip: text;
+}
