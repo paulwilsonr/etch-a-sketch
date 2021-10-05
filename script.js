@@ -82,8 +82,8 @@ function makeGrid (gridNum) {
 }
 
 function updateNum(gridNum) {
-    document.getElementById('numPerSide').textContent = gridNum;
-}
+    document.getElementById('numPerSide').textContent = `Brush Size: ${100-gridNum}`;
+};
 
 makeGrid(16);
 updateNum(16);

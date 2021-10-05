@@ -51,4 +51,10 @@ button {
 .slider {
     display:flex;
     gap: 5px;
+    
+}
+
+.thisSlider {
+    rotation-point: 50% 50%;
+rotation: 90deg; 
 }
